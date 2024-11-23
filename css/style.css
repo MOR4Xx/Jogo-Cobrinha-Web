@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #555555;
+}
+
+.info {
+  display: flex;
+  width: 600px;
+  padding: 2vh 0 0;
+}
+
+#score {
+  flex: 1;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+#max-score {
+  flex: 1;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.dificuldade {
+  width: 600px;
+  height: 50px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-dificuldade {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+
+}
+
+
+canvas {
+  background-color: black;
+}
