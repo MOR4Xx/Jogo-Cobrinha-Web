@@ -1,3 +1,11 @@
+const somFundo = new Audio('/audio/musica pou.mp3');
+somFundo.loop = true;
+const audioComendo = new Audio('/audio/pou-comendo.mp3');
+const audioMaxScore = new Audio('/audio/ele-fezz-de-novo-incansavel.mp3');
+const audioRisada = new Audio('/audio/risada-do-gato.mp3');
+const audioBatida = new Audio('/audio/miau-triste.mp3');
+const audioGyro = new Audio('/audio/foi-quando-gyro-finalmente-entendeu.mp3')
+
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const quadrado = 20;
@@ -8,6 +16,7 @@ let loop;
 let direcao = "";
 let score = 0;
 let max_score = localStorage.getItem('max_score') || 0;
+let boolMaxScore = false;
 
 let comida = {
   x: Math.floor(Math.random() * (canvas.width / quadrado)) * quadrado,
@@ -35,8 +44,9 @@ function verificarComida() {
   const cabeca = cobra.at(-1);
 
   if (cabeca.x === comida.x && cabeca.y === comida.y) {
+    audioComendo.play();
     cobra.unshift({...cobra[0]});
-    
+
     comida = {
       x: Math.floor(Math.random() * (canvas.width / quadrado)) * quadrado,
       y: Math.floor(Math.random() * (canvas.height / quadrado)) * quadrado,
@@ -52,6 +62,12 @@ function verificarBorda() {
   const cabeca = cobra.at(-1);
 
   if (cabeca.x < 0 || cabeca.y < 0 || cabeca.x >= canvas.width || cabeca.y >= canvas.height) {
+
+    if (score >= max_score - 2 && score < max_score) {
+      audioGyro.play();
+    } else {
+      audioBatida.play();
+    }
     alert("GAME OVER!! BATEu O COCO NA PAREDE KKKKKK!!");
     reset();
   }
@@ -72,7 +88,13 @@ function verificarColisao() {
   } while (i < cobra.length - 1 && !colisao);
 
   if (colisao) {
+    if (score >= max_score - 2 && score < max_score) {
+      audioGyro.play();
+    } else {
+      audioRisada.play();
+    }
     alert("GAME OVER!! SEU CORPO NÃO É COMIDA MULA");
+
     reset();
   }
 }
@@ -109,10 +131,11 @@ function atualizarScore() {
 }
 
 function atualizaMaxScore() {
+
   if (max_score <= score) {
     max_score = score;
+    boolMaxScore = true;
     localStorage.setItem('max_score', max_score);
-
     const maxScoreFront = document.getElementById("max-score");
     maxScoreFront.textContent = `Max Score: ${localStorage.getItem('max_score')}`;
   }
@@ -147,16 +170,26 @@ function atualizarVelocidade() {
 }
 
 function reset() {
+  audioRisada.pause();
+  audioBatida.pause();
+
+  if (boolMaxScore) {
+    audioMaxScore.play();
+  }
+
+  boolMaxScore = false;
   cobra.length = 1;
   cobra[0] = {x: 100, y: 100};
   direcao = "";
   score = 0;
+  document.querySelector(".mostra-dificuldade").textContent = `Dificuldade: ${dificuldade}`
   atualizarScore();
   atualizarVelocidade();
 }
 
 function iniciarJogo() {
   reset();
+  // somFundo.play();
 
   clearInterval(loop);
   loop = setInterval(() => {

@@ -12,27 +12,39 @@ body {
 }
 
 .info {
+  background: linear-gradient(to right, #a516c4, #0dccdb);
   display: flex;
   width: 600px;
-  padding: 2vh 0 0;
+  margin: 2vh 0 0;
 }
 
 #score {
   flex: 1;
   text-align: center;
-  background-color: #ffffff;
 }
 
 #max-score {
   flex: 1;
   text-align: center;
-  background-color: #ffffff;
+}
+
+.informacao{
+  width: 600px;
+  background: linear-gradient(to right, #a516c4, #0dccdb);
+
+}
+
+.mostra-dificuldade{
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
 }
 
 .dificuldade {
   width: 600px;
   height: 50px;
-  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +58,6 @@ body {
 
 }
 
-
 canvas {
-  background-color: black;
+  background: linear-gradient(45deg ,#000000, #555555,#ffffff);
 }
