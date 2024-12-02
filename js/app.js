@@ -1,10 +1,10 @@
-const somFundo = new Audio('audio/musica pou.mp3');
+const somFundo = new Audio('./audio/musica pou.mp3');
 somFundo.loop = true;
-const audioComendo = new Audio('audio/pou-comendo.mp3');
-const audioMaxScore = new Audio('audio/ele-fezz-de-novo-incansavel.mp3');
-const audioRisada = new Audio('audio/risada-do-gato.mp3');
-const audioBatida = new Audio('audio/miau-triste.mp3');
-const audioGyro = new Audio('audio/foi-quando-gyro-finalmente-entendeu.mp3')
+const audioComendo = new Audio('./audio/pou-comendo.mp3');
+const audioMaxScore = new Audio('./audio/ele-fezz-de-novo-incansavel.mp3');
+const audioRisada = new Audio('./audio/risada-do-gato.mp3');
+const audioBatida = new Audio('./audio/miau-triste.mp3');
+const audioGyro = new Audio('./audio/foi-quando-gyro-finalmente-entendeu.mp3')
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
