@@ -1,63 +1,68 @@
+/* Reset global */
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos padrão */
 }
 
+/* Estilos gerais do corpo */
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #555555;
+  display: flex; /* Define layout flexível */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  background-color: #555555; /* Define a cor de fundo do corpo */
 }
 
+/* Informações do jogo (pontuação) */
 .info {
-  background: linear-gradient(to right, #a516c4, #0dccdb);
-  display: flex;
-  width: 600px;
-  margin: 2vh 0 0;
+  background: linear-gradient(to right, #a516c4, #0dccdb); /* Fundo com gradiente horizontal */
+  display: flex; /* Layout flexível */
+  width: 600px; /* Largura fixa */
+  margin: 2vh 0 0; /* Margem superior */
 }
 
 #score {
-  flex: 1;
-  text-align: center;
+  flex: 1; /* Ocupa metade da largura do container */
+  text-align: center; /* Centraliza o texto horizontalmente */
 }
 
 #max-score {
-  flex: 1;
-  text-align: center;
+  flex: 1; /* Ocupa metade da largura do container */
+  text-align: center; /* Centraliza o texto horizontalmente */
 }
 
-.informacao{
-  width: 600px;
-  background: linear-gradient(to right, #a516c4, #0dccdb);
-
+/* Container para informações adicionais */
+.informacao {
+  width: 600px; /* Largura fixa */
+  background: linear-gradient(to right, #a516c4, #0dccdb); /* Fundo com gradiente horizontal */
 }
 
-.mostra-dificuldade{
-  width: 600px;
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
+/* Estilo para o título da dificuldade */
+.mostra-dificuldade {
+  width: 600px; /* Largura fixa */
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza o texto horizontalmente */
+  color: white; /* Texto branco */
+  font-weight: bold; /* Negrito */
 }
 
+/* Estilo para os botões de dificuldade */
 .dificuldade {
-  width: 600px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  width: 600px; /* Largura fixa */
+  height: 50px; /* Altura fixa */
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  gap: 20px; /* Espaçamento entre os botões */
 }
 
 .button-dificuldade {
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
-
+  width: 100px; /* Largura fixa */
+  height: 40px; /* Altura fixa */
+  font-size: 20px; /* Tamanho da fonte */
 }
 
+/* Estilo para o canvas (área do jogo) */
 canvas {
-  background: linear-gradient(45deg ,#000000, #555555,#ffffff);
+  background: linear-gradient(45deg, #000000, #555555, #ffffff); /* Fundo com gradiente diagonal */
 }

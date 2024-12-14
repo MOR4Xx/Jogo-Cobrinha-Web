@@ -2,44 +2,41 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jogo da Anaconda</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <!-- Metadados -->
+  <meta charset="utf-8"> <!-- Define o charset como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Define o site como responsivo -->
+  <title>Jogo da Anaconda</title> <!-- Título do documento -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Importa o arquivo CSS -->
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <meta name="theme-color" content="#fafafa">
+  <!-- Configuração de tema -->
+  <meta name="theme-color" content="#fafafa"> <!-- Define a cor do tema -->
 </head>
 
 <body>
-  <div class="info">
-    <h1 id="score">Score: 0</h1>
-    <h1 id="max-score">Max Score: 0</h1>
-  </div>
+<!-- Informações do jogo -->
+<div class="info">
+  <h1 id="score">Score: 0</h1> <!-- Exibe a pontuação atual -->
+  <h1 id="max-score">Max Score: 0</h1> <!-- Exibe a pontuação máxima -->
+</div>
 
-  <canvas width="600" height="600"></canvas>
-  <div class="informacao">
-    <div class="mostra-dificuldade">
-      <h3>Dificuldade: </h3>
-    </div>
-    <nav class="dificuldade">
-      <button id="hard" class="button-dificuldade">Hard</button>
-      <button id="normal" class="button-dificuldade">Normal</button>
-      <button id="easy" class="button-dificuldade">Easy</button>
-    </nav>
-  </div>
-  <script src="js/app.js"></script>
+<!-- Canvas para o jogo -->
+<canvas width="600" height="600"></canvas> <!-- Área gráfica onde o jogo será renderizado -->
 
+<!-- Informações e seleção de dificuldade -->
+<div class="informacao">
+  <div class="mostra-dificuldade">
+    <h3>Dificuldade: </h3> <!-- Rótulo para a seleção de dificuldade -->
+  </div>
+  <nav class="dificuldade">
+    <!-- Botões para seleção de dificuldade -->
+    <button id="hard" class="button-dificuldade">Hard</button>
+    <button id="normal" class="button-dificuldade">Normal</button>
+    <button id="easy" class="button-dificuldade">Easy</button>
+  </nav>
+</div>
+
+<!-- Importação do script do jogo -->
+<script src="js/app.js"></script>
 </body>
 
 </html>
